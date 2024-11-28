@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  background: #121212;
+  border-radius: 8px;
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+/* globals.css Noto Kufi*/
+.font-notoKufi-100 {
+  font-family: var(--font-noto-kufi);
+  font-weight: 100;
+}
+.font-notoKufi-200 {
+  font-family: var(--font-noto-kufi);
+  font-weight: 200;
+}
+.font-notoKufi-300 {
+  font-family: var(--font-noto-kufi);
+  font-weight: 300;
+}
+.font-notoKufi-400 {
+  font-family: var(--font-noto-kufi);
+  font-weight: 400;
+}
+.font-notoKufi-500 {
+  font-family: var(--font-noto-kufi);
+  font-weight: 500;
+}
+.font-notoKufi-600 {
+  font-family: var(--font-noto-kufi);
+  font-weight: 600;
+}
+.font-notoKufi-700 {
+  font-family: var(--font-noto-kufi);
+  font-weight: 700;
+}
+.font-notoKufi-800 {
+  font-family: var(--font-noto-kufi);
+  font-weight: 800;
+}
+.font-notoKufi-900 {
+  font-family: var(--font-noto-kufi);
+  font-weight: 900;
+}

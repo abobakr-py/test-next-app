@@ -1,0 +1,187 @@
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import global from "../../assets/global.svg";
+import profile from "../../assets/profile-circle.svg";
+import { useEffect, useRef, useState } from "react";
+import { useAuth } from "@/Zustand/useAuth";
+import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
+
+interface NavbarProps {
+  lang: any;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ lang }) => {
+  const t = useTranslations();
+  const router = useRouter();
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const profileDropdownRef = useRef<HTMLDivElement>(null);
+  const languageDropdownRef = useRef<HTMLDivElement>(null);
+  const { clearToken, isAuthenticated, user } = useAuth();
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        profileDropdownRef.current &&
+        !profileDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsProfileDropdownOpen(false);
+      }
+      if (
+        languageDropdownRef.current &&
+        !languageDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsLanguageDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    clearToken(); // Clear the token and logout the user
+    setIsProfileDropdownOpen(false); // Close the profile dropdown
+    router.push("/signUp");
+  };
+  const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const path = window.location.pathname; // Get the path without the hostname
+      setCurrentPath(path);
+    }
+  }, []);
+
+  const handleLanguageSwitch = (lang: string) => {
+    const segments = currentPath.split("/").filter(Boolean); // Split path into segments
+    segments[0] = lang; // Replace the first segment with the selected language
+    return `/${segments.join("/")}`;
+    // const currentPath = window.location.pathname;
+    // const segments = currentPath.split("/").filter(Boolean); // Split the path into segments
+    // segments[0] = lang; // Replace the first segment with the selected language (en or ar)
+
+    // // Reconstruct the new path with the selected language
+    // const newPath = `/${segments.join("/")}`;
+    // setIsLanguageDropdownOpen(false);
+    // // Navigate to the new path
+    // return `/${segments.join("/")}`;
+    // // Close the language dropdown
+  };
+  return (
+    <nav
+      dir={lang === "ar" ? "ltr" : "rtl"}
+      className="flex justify-between items-center"
+    >
+      <div className="flex items-center ">
+        {/* Language Switcher with Dropdown */}
+        <div className="relative" ref={languageDropdownRef}>
+          <div
+            className="bg-[#F5F5F5] p-2 rounded-lg cursor-pointer flex flex-row items-center"
+            onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+          >
+            <p className="text-[#121212] text-base font-notoKufi-500">
+              {lang === "ar" ? "عربي" : "English"}
+            </p>
+            <Image
+              src={global}
+              alt={"global"}
+              className="mx-2"
+              loading="eager"
+            />
+          </div>
+
+          {isLanguageDropdownOpen && (
+            <div className="absolute right-0 mt-2 w-28 bg-white border rounded-lg shadow-lg z-10 flex flex-col ">
+              <Link
+                href={handleLanguageSwitch("en")}
+                className="px-4 py-2 text-sm text-gray-700 font-notoKufi-400 hover:bg-gray-100 cursor-pointer text-right rounded-lg"
+              >
+                English
+              </Link>
+              <Link
+                href={handleLanguageSwitch("ar")}
+                className="px-4 py-2 text-sm text-gray-700 font-notoKufi-400 hover:bg-gray-100 cursor-pointer text-right rounded-lg"
+              >
+                عربي
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* Profile Dropdown */}
+        {isAuthenticated ? (
+          <div className="relative" ref={profileDropdownRef}>
+            <div
+              className="flex flex-row items-center cursor-pointer"
+              onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}
+            >
+              <p>{user?.username}</p>
+              <Image
+                src={profile}
+                alt={"profile"}
+                className="mx-2"
+                loading="eager"
+              />
+            </div>
+
+            {isProfileDropdownOpen && (
+              <div className="absolute right-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-10">
+                <Link href="/profile">
+                  <div className="px-4 py-2 text-sm text-gray-700 font-notoKufi-400 hover:bg-gray-100 cursor-pointer text-right rounded-lg">
+                    الصفحة الشخصية
+                  </div>
+                </Link>
+                <div
+                  onClick={handleLogout}
+                  className="px-4 py-2 text-sm text-gray-700 font-notoKufi-400 hover:bg-gray-100 cursor-pointer text-right rounded-lg"
+                >
+                  تسجيل الخروج
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          <Link href="/signUp">
+            <div
+              className={`bg-[#121212] text-base text-white py-2 px-7 ${
+                lang === "ar" ? "ml-8" : "mr-8"
+              } rounded-xl font-notoKufi-500`}
+            >
+              تسجيل الدخول
+            </div>
+          </Link>
+        )}
+      </div>
+
+      {/* Navigation Links */}
+      <div className="flex px-6 py-3 mr-[20%] justify-between">
+        <Link
+          href="/signUp"
+          className="font-notoKufi-400 text-[#121212] text-base hover:underline px-6 py-3"
+        >
+          من نحن
+        </Link>
+        <Link
+          href="/"
+          className="font-notoKufi-400 text-[#121212] text-base hover:underline px-6 py-3"
+        >
+          المقالات
+        </Link>
+        <Link
+          href="/"
+          className="font-notoKufi-600 text-[#121212] text-base hover:underline px-6 py-3 underline"
+        >
+          الصفحة الرئيسية
+        </Link>
+      </div>
+
+      <span className="font-notoKufi-600 text-[#121212]">CryptoLab</span>
+    </nav>
+  );
+};
+
+export default Navbar;

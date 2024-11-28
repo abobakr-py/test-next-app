@@ -1,0 +1,50 @@
+{
+  "homePage": {
+    "welcome": "مرحبا",
+    "LatestArticles": "أحدث المقالات",
+    "all": "الكل",
+    "SuggestedArticles": "مقالات مقترحة",
+    "share": "مشاركة",
+    "saved": "تم الحفظ",
+    "save": "حفظ",
+    "mayalsolike": "قد يعجبك أيضا",
+    "Home": "الصفحة الرئيسية",
+    "Articles": "المقالات",
+    "AboutUs": "من نحن",
+    "Termsandconditions": "الشروط و الأحكام",
+    "ContactInformation": "معلومات التواصل",
+    "email": "البريد الإلكترونى"
+  },
+  "header": {
+    "title": "مرحبا بكم في موقعنا",
+    "subtitle": "نحن سعداء بوجودكم"
+  },
+  "content": {
+    "paragraph1": "هذه هي الفقرة الأولى من الصفحة الرئيسية.",
+    "paragraph2": "إليك المزيد من المحتوى."
+  },
+  "buttons": {
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "logout": "تسجيل الخروج"
+  },
+  "navBar": {
+    "Home": "الصفحة الرئيسية",
+    "Articles": "المقالات",
+    "AboutUs": "من نحن",
+    "logout": "تسجيل الخروج",
+    "login": "تسجيل الدخول",
+    "profile": "الصفحة الشخصية"
+  },
+  "signup": {
+    "welcome": "مرحبا",
+    "register": "سجل الآن",
+    "loginorsignup": "سجّل دخولك أو أنشئ حساباً جديداً للاستمتاع بمحتوى متميز.",
+    "login": "تسجيل الدخول",
+    "signup": "حساب جديد",
+    "forgetPassword": "نسيت كلمة المرور؟"
+  },
+  "profile": {
+    "profile": "الصفحة الشخصية"
+  }
+}

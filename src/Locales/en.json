@@ -1,0 +1,51 @@
+{
+  "homePage": {
+    "welcome": "Welcome",
+    "LatestArticles": "Latest Articles",
+    "all": "All",
+    "SuggestedArticles": "Suggested Articles",
+    "share": "share",
+    "saved": "Saved",
+    "save": "Save",
+    "mayalsolike": "You May Also Like",
+    "Home": "Home",
+    "Articles": "Articles",
+    "AboutUs": "About Us",
+    "Termsandconditions": "Terms and Conditions",
+    "ContactInformation": "Contact Information",
+    "email": "Email"
+  },
+
+  "header": {
+    "title": "Welcome to Our Website",
+    "subtitle": "We are glad to have you"
+  },
+  "content": {
+    "paragraph1": "This is the first paragraph of the home page.",
+    "paragraph2": "Here is some more content."
+  },
+  "buttons": {
+    "login": "Log In",
+    "signup": "Sign Up",
+    "logout": "Log Out"
+  },
+  "navBar": {
+    "Home": "Home",
+    "Articles": "Articles",
+    "AboutUs": "About Us",
+    "logout": "Logout",
+    "login": "LogIn",
+    "profile": "Profile"
+  },
+  "signup": {
+    "welcome": "Welcome",
+    "register": "Register now",
+    "loginorsignup": "Login or create a new account to enjoy premium content.",
+    "login": "LogIn",
+    "signup": "Sign Up",
+    "forgetPassword": "Forget Password?"
+  },
+  "profile": {
+    "profile": "Profile"
+  }
+}
