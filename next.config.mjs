@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "standalone", // Required for SSR deployments
+    output: "export",//standalone // Required for SSR deployments
     experimental: {
       appDir: true, // Enable App Directory (if using Next.js 14+)
     },
