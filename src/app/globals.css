@@ -1,0 +1,140 @@
+/* @import '~react-toastify/dist/ReactToastify.min.css'; */
+@import "react-toastify/dist/ReactToastify.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  box-sizing: border-box;
+}
+/* globals.css IBM */
+.font-ibm-100 {
+  font-family: var(--font-ibm);
+  font-weight: 100;
+}
+.font-ibm-200 {
+  font-family: var(--font-ibm);
+  font-weight: 200;
+}
+.font-ibm-300 {
+  font-family: var(--font-ibm);
+  font-weight: 300;
+}
+.font-ibm-400 {
+  font-family: var(--font-ibm);
+  font-weight: 400;
+}
+.font-ibm-500 {
+  font-family: var(--font-ibm);
+  font-weight: 500;
+}
+.font-ibm-600 {
+  font-family: var(--font-ibm);
+  font-weight: 600;
+}
+.font-ibm-700 {
+  font-family: var(--font-ibm);
+  font-weight: 700;
+}
+/* globals.css IBM ARABIC */
+.font-ibmArabic-100 {
+  font-family: var(--font-ibm-arabic);
+  font-weight: 100;
+}
+.font-ibmArabic-200 {
+  font-family: var(--font-ibm-arabic);
+  font-weight: 200;
+}
+.font-ibmArabic-300 {
+  font-family: var(--font-ibm-arabic);
+  font-weight: 300;
+}
+.font-ibmArabic-400 {
+  font-family: var(--font-ibm-arabic);
+  font-weight: 400;
+}
+.font-ibmArabic-500 {
+  font-family: var(--font-ibm-arabic);
+  font-weight: 500;
+}
+.font-ibmArabic-600 {
+  font-family: var(--font-ibm-arabic);
+  font-weight: 600;
+}
+.font-ibmArabic-700 {
+  font-family: var(--font-ibm-arabic);
+  font-weight: 700;
+}
+/* globals.css TAJAWAL*/
+
+.font-tajawal-200 {
+  font-family: var(--font-tajawal);
+  font-weight: 200;
+}
+.font-tajawal-300 {
+  font-family: var(--font-tajawal);
+  font-weight: 300;
+}
+.font-tajawal-400 {
+  font-family: var(--font-tajawal);
+  font-weight: 400;
+}
+.font-tajawal-500 {
+  font-family: var(--font-tajawal);
+  font-weight: 500;
+}
+
+.font-tajawal-700 {
+  font-family: var(--font-tajawal);
+  font-weight: 700;
+}
+.font-tajawal-800 {
+  font-family: var(--font-tajawal);
+  font-weight: 800;
+}
+.font-tajawal-900 {
+  font-family: var(--font-tajawal);
+  font-weight: 900;
+}
+/* Custom input styling to hide spin buttons */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.slider-thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: 2px solid #e5e7eb; /* Tailwind gray-200 */
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.slider-thumb::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
