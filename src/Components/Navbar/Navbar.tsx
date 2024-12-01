@@ -172,14 +172,13 @@ const Navbar: React.FC<NavbarProps> = ({ lang: initialLang }) => {
             )}
           </div>
         ) : (
-          <Link href="/signUp">
-            <div
-              className={`bg-[#121212] text-base items-center flex text-white py-2 px-7 ${
-                lang === "ar" ? "ml-8" : "mr-8"
-              } rounded-xl font-notoKufi-500`}
-            >
-              {t("login")}
-            </div>
+          <Link
+            className={`bg-[#121212] text-base items-center flex text-white py-2 px-7 ${
+              lang === "ar" ? "ml-8" : "mr-8"
+            } rounded-xl font-notoKufi-500`}
+            href="/signUp"
+          >
+            {t("login")}
           </Link>
         )}
 
