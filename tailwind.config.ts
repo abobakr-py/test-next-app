@@ -8,9 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        notoKufi: ["var(--font-noto-kufi)"],
-      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
